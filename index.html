@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+    <!--JQUERY-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    <!-- THEME BOOTSTRAP -->
+        <link rel="stylesheet" href="js/bootstrap.min.js">
+    
+    <!-- FRAMEWORK BOOTSTRAP -->
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">    
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <meta name="color-scheme" content="light dark">
+        <link rel="stylesheet" href="css/index.css" type="text/css">
+
+        <title>TV SHOWS</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-dark bg-dark">
+            <div class="container-fluid">
+            <a class="navbar-brand">
+                TvShows
+            </a>
+            </div>
+        </nav>
+    <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary m-4" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="addTVshow()">
+            Agregar Tv Show
+        </button>
+    <!-- formulario MODAL -->
+        <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content container">
+                    <div class="modal-header">
+                        <legend class="modal-title">Registros de TvShow</legend>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                        <fieldset>
+                            
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Title</label>
+                                <input type="text" class="form-control" id="txtTitle" aria-describedby="emailHelp">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Network</label>
+                                <input type="text" class="form-control" id="txtNetwork" aria-describedby="emailHelp">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Number of Seasons</label>
+                                <input type="number" class="form-control" id="txtNumberOfSeasons" aria-describedby="emailHelp">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleSelect1">Genres</label>
+                                <select class="form-control" multiple name="exampleSelect1" id="txtgenres">
+                                    <option value="Terror">Terror</option>
+                                    <option value="Ciencia Ficción">Ciencia Ficción</option>
+                                    <option value="Accion">Acción</option>
+                                    <option value="Comedia">Comedia</option>
+                                </select>
+                            </div>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="isCurrent" checked>
+                                <label class="form-check-label" for="flexSwitchCheckChecked">Is Current</label>
+                            </div>
+
+
+                            <button type="submit" class="btn btn-primary" onclick="guardar()">Save</button>
+                        </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!-- Tabla de datos -->
+        <div class="container mt-5">                    
+            <table class="table table-striped" id="programas">
+    <!-- Cuerpo Tabla -->
+                <thead>
+                    <tr>
+                        <th scope="col">Title<i class="bi bi-arrow-down-up mx-auto"></i></th>
+                        <th scope="col">Network<i class="bi bi-arrow-down-up align-self-end" ></i></th>
+                        <th scope="col">Number of seasons<i class="bi bi-arrow-down-up align-self-end"></i></th>
+                        <th scope="col">genres<i class="bi bi-arrow-down-up align-self-end"></i></th>
+                        <th scope="col">Is Current<i class="bi bi-arrow-down-up align-self-end"></i></th>
+                        <th scope="col">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="datos">                       
+                </tbody>
+            </table>
+        </div>
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-database.js"></script>
+
+        <script src="js/index.js"></script>
+        <script src="js/ordenar_tabla.js"></script>
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+        
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    </body>
+</html>
