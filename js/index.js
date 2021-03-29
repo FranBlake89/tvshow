@@ -1,11 +1,12 @@
   // Your web app's Firebase configuration
 var firebaseConfig = {
-  apiKey: "AIzaSyD5-tpktJRBbJwIP_TZmvGG0Yjrft1hcMg",
-  authDomain: "test-formulario-a3ace.firebaseapp.com",
-  projectId: "test-formulario-a3ace",
-  storageBucket: "test-formulario-a3ace.appspot.com",
-  messagingSenderId: "937793854384",
-  appId: "1:937793854384:web:e97a3af5315be7836d9475"
+  apiKey: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+  authDomain: "xxxxxxxxxxxxxxxxxxxxxxx",
+  databaseURL: "xxxxxxxxxxxxxxxxxxxxxxxxx",
+  projectId: "xxxxxxxxxxxxxxxxxxxxxxxxx",
+  storageBucket: "xxxxxxxxxxxxxxxxxxx",
+  messagingSenderId: "xxxxxxxxxxxxxxxxxxxxx",
+  appId: "xxxxxxxxxxxxxxxxx"
 };
   // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
